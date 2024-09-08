@@ -1,22 +1,26 @@
-<!DOCTYPE html>  
-<html lang="es">  
-<head>  
-    <meta charset="UTF-8">  
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-    <link href="https://cdn.tailwindcss.com" rel="stylesheet">  
-    <title>Lista de Estudiantes</title>  
-</head>  
-<body class="bg-gray-100">  
-    <header class="p-4 bg-blue-600 text-white">  
-        <h1 class="text-2xl">Lista de Estudiantes</h1>  
-    </header>  
-    <main class="p-6">  
-        <ul>  
-            {% for student in students %}  
-                <li>{{ student.first_name }} {{ student.last_name }} - Sección: {{ student.section }}</li>  
-            {% endfor %}  
-        </ul>  
-        <a href="{{ url_for('register_student') }}" class="bg-blue-600 text-white rounded p-2 mt-4">Registrar otro Estudiante</a>  
-    </main>  
-</body>  
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Estudiantes</title>
+</head>
+
+<body class="bg-gray-100">
+    <header class="p-4 bg-blue-600 text-white">
+        <h1 class="text-2xl">Lista de Estudiantes</h1>
+    </header>
+    <main class="p-6">
+        <ul>
+            {% for student in students %}
+            <li>{{ student.first_name }} {{ student.last_name }} - Sección: {{ student.section }}</li>
+            {% endfor %}
+        </ul>
+        <a href="{{ url_for('register_student') }}" class="bg-blue-600 text-white rounded p-2 mt-4">Registrar otro
+            Estudiante</a>
+    </main>
+    <script src="https://cdn.tailwindcss.com"></script>
+</body>
+
 </html>

@@ -36,9 +36,9 @@ flask run
 
 5. Open your browser and navigate to `http://localhost:5000`.  
 
-## :brain: Acknowledgements
-_"Whoever loves discipline loves knowledge, but whoever hates correction is stupid."_
-
 ## :scroll: License  
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.  
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## :brain: Acknowledgements
+_"Whoever loves discipline loves knowledge, but whoever hates correction is stupid."_

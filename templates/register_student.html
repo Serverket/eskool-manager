@@ -1,48 +1,57 @@
-<!DOCTYPE html>  
-<html lang="es">  
-<head>  
-    <meta charset="UTF-8">  
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">  
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">  
-    <title>Registrar Estudiante</title>  
-</head>  
-<body class="bg-gray-100">  
-    <header class="p-4 bg-blue-600 text-white">  
-        <h1 class="text-2xl">Registrar Estudiante</h1>  
-    </header>  
-    <main class="p-6">  
-        <a href="{{ url_for('index') }}" class="flex items-center mb-4 p-3 bg-blue-600 text-white rounded-lg shadow-lg hover:bg-blue-700 transition transform hover:scale-105 w-32">  
-            <span class="material-icons mr-2">arrow_back</span>  
-            <span class="text-lg">Regresar</span>  
-        </a>  
-        <form action="{{ url_for('register_student') }}" method="POST" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">  
-            <div class="mb-4">  
-                <label class="block text-gray-700 text-sm font-bold mb-2">Nombre:</label>  
-                <input type="text" name="first_name" class="border rounded p-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-600" required>  
-            </div>  
-            <div class="mb-4">  
-                <label class="block text-gray-700 text-sm font-bold mb-2">Apellido:</label>  
-                <input type="text" name="last_name" class="border rounded p-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-600" required>  
-            </div>  
-            <div class="mb-4">  
-                <label class="block text-gray-700 text-sm font-bold mb-2">Sección:</label>  
-                <select name="section" class="border rounded p-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-600" required>  
-                    {% if sections %}  
-                        <option value="" disabled selected>Seleccione una sección</option>  
-                        {% for section in sections %}  
-                            <option value="{{ section.name }}">{{ section.name }}</option>  
-                        {% endfor %}  
-                    {% else %}  
-                        <option value="" disabled selected>No hay secciones registradas</option>  
-                    {% endif %}  
-                </select>  
-                {% if not sections %}  
-                    <a href="{{ url_for('register_section') }}" class="mt-2 inline-block text-blue-600 hover:underline">Registrar nueva sección</a>  
-                {% endif %}  
-            </div>  
-            <button type="submit" class="bg-blue-600 text-white rounded p-2 mt-4 hover:bg-blue-700 transition">Registrar Estudiante</button>  
-        </form>  
-    </main>  
-</body>  
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Registrar Estudiante</title>
+</head>
+
+<body class="bg-gray-100">
+    <header class="p-6 bg-blue-600 text-white shadow-lg">
+        <h1 class="text-2xl">Registrar Estudiante</h1>
+    </header>
+    <main class="p-8">
+        <a href="{{ url_for('index') }}"
+            class="flex items-center mb-4 p-3 bg-blue-600 text-white rounded-lg shadow-lg hover:bg-blue-700 transition transform hover:scale-105 w-32">
+            <span class="material-icons mr-2">arrow_back</span>
+            <span class="text-lg">Regresar</span>
+        </a>
+        <form action="{{ url_for('register_student') }}" method="POST" class="bg-white shadow-md rounded-lg p-8">
+            <div class="mb-4">
+                <label class="block text-gray-700">Nombre:</label>
+                <input type="text" name="first_name"
+                    class="border rounded p-3 w-full focus:outline-none focus:ring-2 focus:ring-blue-600" required>
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-700">Apellido:</label>
+                <input type="text" name="last_name"
+                    class="border rounded p-3 w-full focus:outline-none focus:ring-2 focus:ring-blue-600" required>
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-700">Sección:</label>
+                <select name="section"
+                    class="border rounded p-3 w-full focus:outline-none focus:ring-2 focus:ring-blue-600" required>
+                    {% if sections %}
+                    <option value="" disabled selected>Seleccione una sección</option>
+                    {% for section in sections %}
+                    <option value="{{ section.name }}">{{ section.name }}</option>
+                    {% endfor %}
+                    {% else %}
+                    <option value="" disabled selected>No hay secciones registradas</option>
+                    {% endif %}
+                </select>
+                {% if not sections %}
+                <a href="{{ url_for('register_section') }}"
+                    class="mt-2 inline-block text-blue-600 hover:underline">Registrar nueva sección</a>
+                {% endif %}
+            </div>
+            <button type="submit" class="bg-blue-600 text-white rounded p-3 mt-4 hover:bg-blue-700 transition">Registrar
+                Estudiante</button>
+        </form>
+    </main>
+    <script src="https://cdn.tailwindcss.com"></script>
+</body>
+
 </html>

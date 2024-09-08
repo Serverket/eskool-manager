@@ -1,20 +1,28 @@
-<!DOCTYPE html>  
-<html lang="es">  
-<head>  
-    <meta charset="UTF-8">  
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-    <link href="https://cdn.tailwindcss.com" rel="stylesheet">  
-    <title>Registrar Materia</title>  
-</head>  
-<body class="bg-gray-100">  
-    <header class="p-4 bg-blue-600 text-white">  
-        <h1 class="text-2xl">Registrar Materia</h1>  
-    </header>  
-    <main class="p-6">  
-        <form action="{{ url_for('register_subject') }}" method="POST">  
-            <div>  
-                <label class="block">Nombre de la Materia:</label>  
-                <input type="text" name="name" class="border rounded p-2 w-full" required>  
-            </div>  
-            <button type="submit" class="bg-blue-600 text-white rounded p-2 mt-4">Registrar Materia</button>  
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Materia</title>
+</head>
+
+<body class="bg-gray-100">
+    <header class="p-6 bg-blue-600 text-white shadow-lg">
+        <h1 class="text-2xl">Registrar Materia</h1>
+    </header>
+    <main class="p-8">
+        <form action="{{ url_for('register_subject') }}" method="POST" class="bg-white shadow-md rounded-lg p-8">
+            <div class="mb-4">
+                <label class="block text-gray-700">Nombre de la Materia:</label>
+                <input type="text" name="name"
+                    class="border rounded p-3 w-full focus:outline-none focus:ring-2 focus:ring-blue-600" required>
+            </div>
+            <button type="submit" class="bg-blue-600 text-white rounded p-3 mt-4 hover:bg-blue-700 transition">Registrar
+                Materia</button>
         </form>
+    </main>
+    <script src="https://cdn.tailwindcss.com"></script>
+</body>
+
+</html>

@@ -1,35 +1,40 @@
-<!DOCTYPE html>  
-<html lang="es">  
-<head>  
-    <meta charset="UTF-8">  
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">  
-    <title>Registrar Período</title>  
-</head>  
-<body class="bg-gray-100">  
-    <header class="p-6 bg-blue-700 text-white shadow-lg">  
-        <h1 class="text-4xl">Registrar Período</h1>  
-        <p class="mt-2 text-lg">Completa el formulario para registrar un nuevo período escolar.</p>  
-    </header>  
-    <main class="p-8">  
-        <form action="{{ url_for('register_period') }}" method="POST" class="bg-white p-8 rounded-lg shadow-lg">  
-            <h2 class="text-3xl font-semibold mb-6">Formulario de Registro</h2>  
-            <div class="mb-6">  
-                <label class="block mb-2 text-lg font-medium">Nombre del Período:</label>  
-                <input type="text" name="name" class="border rounded p-3 w-full" required>  
-            </div>  
-            <div class="mb-6">  
-                <label class="block mb-2 text-lg font-medium">Fecha de Inicio:</label>  
-                <input type="date" name="start_date" class="border rounded p-3 w-full" required>  
-            </div>  
-            <div class="mb-6">  
-                <label class="block mb-2 text-lg font-medium">Fecha de Fin:</label>  
-                <input type="date" name="end_date" class="border rounded p-3 w-full" required>  
-            </div>  
-            <button type="submit" class="bg-blue-600 text-white rounded p-3 mt-4 hover:bg-blue-700 transition transform hover:scale-105">  
-                Registrar Período  
-            </button>  
-        </form>  
-    </main>  
-</body>  
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Período</title>
+</head>
+
+<body class="bg-gray-100">
+    <header class="p-6 bg-blue-600 text-white shadow-lg">
+        <h1 class="text-2xl">Registrar Período</h1>
+        <p class="mt-2 text-lg">Completa el formulario para registrar un nuevo período escolar.</p>
+    </header>
+    <main class="p-8">
+        <form action="{{ url_for('register_period') }}" method="POST" class="bg-white p-8 rounded-lg shadow-lg">
+            <h2 class="text-xl font-semibold mb-6">Formulario de Registro</h2>
+            <div class="mb-6">
+                <label class="block mb-2 text-lg font-medium">Nombre del Período:</label>
+                <input type="text" name="name"
+                    class="border rounded p-3 w-full focus:outline-none focus:ring-2 focus:ring-blue-600" required>
+            </div>
+            <div class="mb-6">
+                <label class="block mb-2 text-lg font-medium">Fecha de Inicio:</label>
+                <input type="date" name="start_date"
+                    class="border rounded p-3 w-full focus:outline-none focus:ring-2 focus:ring-blue-600" required>
+            </div>
+            <div class="mb-6">
+                <label class="block mb-2 text-lg font-medium">Fecha de Fin:</label>
+                <input type="date" name="end_date"
+                    class="border rounded p-3 w-full focus:outline-none focus:ring-2 focus:ring-blue-600" required>
+            </div>
+            <button type="submit" class="bg-blue-600 text-white rounded p-3 mt-4 hover:bg-blue-700 transition">Registrar
+                Período</button>
+        </form>
+    </main>
+    <script src="https://cdn.tailwindcss.com"></script>
+</body>
+
 </html>

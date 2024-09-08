@@ -1,55 +1,65 @@
-<!DOCTYPE html>  
-<html lang="es">  
-<head>  
-    <meta charset="UTF-8">  
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-    <link href="https://cdn.tailwindcss.com" rel="stylesheet">  
-    <title>Registrar Calificación</title>  
-</head>  
-<body class="bg-gray-100">  
-    <header class="p-4 bg-blue-600 text-white">  
-        <h1 class="text-2xl">Registrar Calificación</h1>  
-    </header>  
-    <main class="p-6">  
-        <form action="{{ url_for('register_grade') }}" method="POST">  
-            <div>  
-                <label class="block">Selecciona un Estudiante:</label>  
-                <select name="student_id" class="border rounded p-2 w-full" required>  
-                    {% for student in students %}  
-                        <option value="{{ student.id }}">{{ student.first_name }} {{ student.last_name }}</option>  
-                    {% endfor %}  
-                </select>  
-            </div>  
-            <div>  
-                <label class="block">Selecciona un Maestro:</label>  
-                <select name="teacher_id" class="border rounded p-2 w-full" required>  
-                    {% for teacher in teachers %}  
-                        <option value="{{ teacher.id }}">{{ teacher.first_name }} {{ teacher.last_name }}</option>  
-                    {% endfor %}  
-                </select>  
-            </div>  
-            <div>  
-                <label class="block">Selecciona un Período:</label>  
-                <select name="period_id" class="border rounded p-2 w-full" required>  
-                    {% for period in periods %}  
-                        <option value="{{ period.id }}">{{ period.name }}</option>  
-                    {% endfor %}  
-                </select>  
-            </div>  
-            <div>  
-                <label class="block">Selecciona una Materia:</label>  
-                <select name="subject_id" class="border rounded p-2 w-full" required>  
-                    {% for subject in subjects %}  
-                        <option value="{{ subject.id }}">{{ subject.name }}</option>  
-                    {% endfor %}  
-                </select>  
-            </div>  
-            <div>  
-                <label class="block">Calificación:</label>  
-                <input type="number" name="score" class="border rounded p-2 w-full" step="0.01" required>  
-            </div>  
-            <button type="submit" class="bg-blue-600 text-white rounded p-2 mt-4">Registrar Calificación</button>  
-        </form>  
-    </main>  
-</body>  
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Calificación</title>
+</head>
+
+<body class="bg-gray-100">
+    <header class="p-6 bg-blue-600 text-white shadow-lg">
+        <h1 class="text-2xl">Registrar Calificación</h1>
+    </header>
+    <main class="p-8">
+        <form action="{{ url_for('register_grade') }}" method="POST" class="bg-white shadow-md rounded-lg p-8">
+            <div class="mb-4">
+                <label class="block text-gray-700">Selecciona un Estudiante:</label>
+                <select name="student_id"
+                    class="border rounded p-3 w-full focus:outline-none focus:ring-2 focus:ring-blue-600" required>
+                    {% for student in students %}
+                    <option value="{{ student.id }}">{{ student.first_name }} {{ student.last_name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-700">Selecciona un Maestro:</label>
+                <select name="teacher_id"
+                    class="border rounded p-3 w-full focus:outline-none focus:ring-2 focus:ring-blue-600" required>
+                    {% for teacher in teachers %}
+                    <option value="{{ teacher.id }}">{{ teacher.first_name }} {{ teacher.last_name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-700">Selecciona un Período:</label>
+                <select name="period_id"
+                    class="border rounded p-3 w-full focus:outline-none focus:ring-2 focus:ring-blue-600" required>
+                    {% for period in periods %}
+                    <option value="{{ period.id }}">{{ period.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-700">Selecciona una Materia:</label>
+                <select name="subject_id"
+                    class="border rounded p-3 w-full focus:outline-none focus:ring-2 focus:ring-blue-600" required>
+                    {% for subject in subjects %}
+                    <option value="{{ subject.id }}">{{ subject.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-700">Calificación:</label>
+                <input type="number" name="score"
+                    class="border rounded p-3 w-full focus:outline-none focus:ring-2 focus:ring-blue-600" step="0.01"
+                    required>
+            </div>
+            <button type="submit" class="bg-blue-600 text-white rounded p-3 mt-4 hover:bg-blue-700 transition">Registrar
+                Calificación</button>
+        </form>
+    </main>
+    <script src="https://cdn.tailwindcss.com"></script>
+</body>
+
 </html>

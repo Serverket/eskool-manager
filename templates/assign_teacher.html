@@ -1,41 +1,45 @@
-<!DOCTYPE html>  
-<html lang="es">  
-<head>  
-    <meta charset="UTF-8">  
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-    <link href="https://cdn.tailwindcss.com" rel="stylesheet">  
-    <title>Asignar Maestro a Sección</title>  
-</head>  
-<body class="bg-gray-100">  
-    <header class="p-6 bg-blue-700 text-white shadow-lg">  
-        <h1 class="text-4xl">Asignar Maestro a Sección</h1>  
-        <p class="mt-2 text-lg">Selecciona un maestro y las secciones correspondientes.</p>  
-    </header>  
-    <main class="p-8">  
-        <form action="{{ url_for('assign_teacher') }}" method="POST" class="bg-white p-8 rounded-lg shadow-lg">  
-            <h2 class="text-3xl font-semibold mb-6">Formulario de Asignación</h2>  
-            <div class="mb-6">  
-                <label class="block mb-2 text-lg font-medium">Selecciona un Maestro:</label>  
-                <select name="teacher_id" class="border rounded p-3 w-full" required>  
-                    <option value="">Seleccione un maestro</option>  
-                    {% for teacher in teachers %}  
-                        <option value="{{ teacher.id }}">{{ teacher.first_name }} {{ teacher.last_name }}</option>  
-                    {% endfor %}  
-                </select>  
-            </div>  
-            <div class="mb-6">  
-                <label class="block mb-2 text-lg font-medium">Selecciona las Secciones:</label>  
-                {% for section in sections %}  
-                    <div class="flex items-center mb-2">  
-                        <input type="checkbox" name="section_ids" value="{{ section.id }}" class="mr-2">  
-                        <label class="text-lg">{{ section.name }}</label>  
-                    </div>  
-                {% endfor %}  
-            </div>  
-            <button type="submit" class="bg-blue-600 text-white rounded p-3 mt-4 hover:bg-blue-700 transition transform hover:scale-105">  
-                Asignar Maestro  
-            </button>  
-        </form>  
-    </main>  
-</body>  
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asignar Maestro a Sección</title>
+</head>
+
+<body class="bg-gray-100">
+    <header class="p-6 bg-blue-700 text-white shadow-lg">
+        <h1 class="text-4xl">Asignar Maestro a Sección</h1>
+        <p class="mt-2 text-lg">Selecciona un maestro y las secciones correspondientes.</p>
+    </header>
+    <main class="p-8">
+        <form action="{{ url_for('assign_teacher') }}" method="POST" class="bg-white p-8 rounded-lg shadow-lg">
+            <h2 class="text-3xl font-semibold mb-6">Formulario de Asignación</h2>
+            <div class="mb-6">
+                <label class="block mb-2 text-lg font-medium">Selecciona un Maestro:</label>
+                <select name="teacher_id" class="border rounded p-3 w-full" required>
+                    <option value="">Seleccione un maestro</option>
+                    {% for teacher in teachers %}
+                    <option value="{{ teacher.id }}">{{ teacher.first_name }} {{ teacher.last_name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="mb-6">
+                <label class="block mb-2 text-lg font-medium">Selecciona las Secciones:</label>
+                {% for section in sections %}
+                <div class="flex items-center mb-2">
+                    <input type="checkbox" name="section_ids" value="{{ section.id }}" class="mr-2">
+                    <label class="text-lg">{{ section.name }}</label>
+                </div>
+                {% endfor %}
+            </div>
+            <button type="submit"
+                class="bg-blue-600 text-white rounded p-3 mt-4 hover:bg-blue-700 transition transform hover:scale-105">
+                Asignar Maestro
+            </button>
+        </form>
+    </main>
+    <script src="https://cdn.tailwindcss.com"></script>
+</body>
+
 </html>
