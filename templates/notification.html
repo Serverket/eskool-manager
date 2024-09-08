@@ -1,0 +1,23 @@
+<div id="notification" class="fixed top-5 right-5 bg-red-500 text-white p-4 rounded-lg shadow-lg hidden">  
+    <h3 class="font-bold">Error 404</h3>  
+    <p class="mt-1">La página que intentas acceder no existe. Por favor verifica la URL o vuelve a la página principal.</p>  
+    <button onclick="closeNotification()" class="mt-2 bg-red-700 hover:bg-red-800 text-white rounded px-2 py-1">Cerrar</button>  
+</div>  
+
+<script>  
+    function showNotification() {  
+        const notification = document.getElementById('notification');  
+        notification.classList.remove('hidden');  
+        setTimeout(() => {  
+            notification.classList.add('hidden');  
+        }, 5000); // Ocultar después de 5 segundos  
+    }  
+
+    function closeNotification() {  
+        const notification = document.getElementById('notification');  
+        notification.classList.add('hidden');  
+    }  
+    
+    // Llamar a esta función en el evento de error en la aplicación  
+    // showNotification(); // Descomentar en caso de invocación directa  
+</script>

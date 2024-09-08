@@ -1,0 +1,83 @@
+<!DOCTYPE html>  
+<html lang="es">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">  
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">  
+    <title>Sistema de Gestión Escolar</title>  
+</head>  
+<body class="bg-gray-100">  
+    <header class="p-6 bg-blue-700 text-white shadow-lg">  
+        <h1 class="text-4xl font-bold">Sistema de Gestión Escolar</h1>  
+        <p class="mt-2 text-lg">Bienvenido al sistema. Administra fácilmente estudiantes, maestros y más.</p>  
+    </header>  
+    <main class="p-8">  
+        <h2 class="text-3xl font-semibold mb-6">Navegación Rápida</h2>  
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">  
+            <a href="{{ url_for('register_student') }}" class="flex flex-col items-start block p-6 bg-blue-500 text-white rounded-lg shadow-lg hover:bg-blue-600 transition transform hover:scale-105">  
+                <span class="material-icons mb-2">person_add</span>  
+                <h3 class="text-xl font-bold">Registrar Estudiante</h3>  
+                <p class="mt-2">Agrega un nuevo estudiante al sistema.</p>  
+            </a>  
+            <a href="{{ url_for('register_teacher') }}" class="flex flex-col items-start block p-6 bg-blue-500 text-white rounded-lg shadow-lg hover:bg-blue-600 transition transform hover:scale-105">  
+                <span class="material-icons mb-2">school</span>  
+                <h3 class="text-xl font-bold">Registrar Maestro</h3>  
+                <p class="mt-2">Agrega un nuevo maestro al sistema.</p>  
+            </a>  
+            <a href="{{ url_for('register_period') }}" class="flex flex-col items-start block p-6 bg-blue-500 text-white rounded-lg shadow-lg hover:bg-blue-600 transition transform hover:scale-105">  
+                <span class="material-icons mb-2">calendar_today</span>  
+                <h3 class="text-xl font-bold">Registrar Período</h3>  
+                <p class="mt-2">Define un nuevo período escolar.</p>  
+            </a>  
+            <a href="{{ url_for('register_subject') }}" class="flex flex-col items-start block p-6 bg-blue-500 text-white rounded-lg shadow-lg hover:bg-blue-600 transition transform hover:scale-105">  
+                <span class="material-icons mb-2">book</span>  
+                <h3 class="text-xl font-bold">Registrar Materia</h3>  
+                <p class="mt-2">Agrega una nueva materia al sistema.</p>  
+            </a>  
+            <a href="{{ url_for('register_section') }}" class="flex flex-col items-start block p-6 bg-blue-500 text-white rounded-lg shadow-lg hover:bg-blue-600 transition transform hover:scale-105">  
+                <span class="material-icons mb-2">class</span>  
+                <h3 class="text-xl font-bold">Registrar Sección</h3>  
+                <p class="mt-2">Crea una nueva sección para los estudiantes.</p>  
+            </a>  
+            <a href="{{ url_for('assign_teacher') }}" class="flex flex-col items-start block p-6 bg-blue-500 text-white rounded-lg shadow-lg hover:bg-blue-600 transition transform hover:scale-105">  
+                <span class="material-icons mb-2">assignment_ind</span>  
+                <h3 class="text-xl font-bold">Asignar Maestro a Sección</h3>  
+                <p class="mt-2">Asigna maestros a las secciones correspondientes.</p>  
+            </a>  
+            <a href="{{ url_for('reports') }}" class="flex flex-col items-start block p-6 bg-blue-500 text-white rounded-lg shadow-lg hover:bg-blue-600 transition transform hover:scale-105">  
+                <span class="material-icons mb-2">assessment</span>  
+                <h3 class="text-xl font-bold">Ver Reportes</h3>  
+                <p class="mt-2">Accede a los reportes de estudiantes y maestros.</p>  
+            </a>  
+        </div>  
+    </main>  
+
+    <!-- Componente de Notificación Emergente -->  
+    <div id="notification" class="fixed top-5 right-5 bg-red-500 text-white p-4 rounded-lg shadow-lg hidden">  
+        <h3 class="font-bold">Error 404</h3>  
+        <p class="mt-1">La página que intentas acceder no existe. Por favor verifica la URL o vuelve a la página principal.</p>  
+        <button onclick="closeNotification()" class="mt-2 bg-red-700 hover:bg-red-800 text-white rounded px-2 py-1">Cerrar</button>  
+    </div>  
+
+    <script>  
+        function showNotification() {  
+            const notification = document.getElementById('notification');  
+            notification.classList.remove('hidden');  
+            setTimeout(() => {  
+                notification.classList.add('hidden');  
+            }, 5000); // Ocultar después de 5 segundos  
+        }  
+
+        function closeNotification() {  
+            const notification = document.getElementById('notification');  
+            notification.classList.add('hidden');  
+        }  
+        
+        // Llamar a esta función en el evento de error en la aplicación  
+        if (window.location.pathname === "/404") { // Por ejemplo, si la ruta no existe  
+            showNotification();  
+        }  
+    </script>  
+</body>  
+</html>

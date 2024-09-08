@@ -1,0 +1,55 @@
+<!DOCTYPE html>  
+<html lang="es">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">  
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> <!-- Enlace a Google Material Icons -->  
+    <title>Reportes</title>  
+</head>  
+<body class="bg-gray-100">  
+    <header class="p-6 bg-blue-700 text-white shadow-lg">  
+        <h1 class="text-4xl font-bold">Reportes</h1>  
+        <p class="mt-2 text-lg">Accede a los reportes de estudiantes, maestros y más.</p>  
+    </header>  
+    <main class="p-8">  
+        <a href="{{ url_for('index') }}" class="flex items-center mb-4 p-3 bg-blue-600 text-white rounded-lg shadow-lg hover:bg-blue-700 transition transform hover:scale-105 w-32">  
+            <span class="material-icons mr-2">arrow_back</span>  
+            <span class="text-lg">Regresar</span>  
+        </a>  
+        <h2 class="text-3xl font-semibold mb-6">Tipos de Reportes</h2>  
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">  
+            <a href="{{ url_for('list_students') }}" class="block p-6 bg-blue-500 text-white rounded-lg shadow-lg hover:bg-blue-600 transition transform hover:scale-105">  
+                <span class="material-icons mb-2">group</span>  
+                <h3 class="text-xl font-bold">Lista de Estudiantes</h3>  
+                <p class="mt-2">Visualiza todos los estudiantes registrados.</p>  
+            </a>  
+            <a href="{{ url_for('list_teachers') }}" class="block p-6 bg-blue-500 text-white rounded-lg shadow-lg hover:bg-blue-600 transition transform hover:scale-105">  
+                <span class="material-icons mb-2">school</span>  
+                <h3 class="text-xl font-bold">Lista de Maestros</h3>  
+                <p class="mt-2">Visualiza todos los maestros registrados.</p>  
+            </a>  
+            <a href="{{ url_for('list_periods') }}" class="block p-6 bg-blue-500 text-white rounded-lg shadow-lg hover:bg-blue-600 transition transform hover:scale-105">  
+                <span class="material-icons mb-2">calendar_today</span>  
+                <h3 class="text-xl font-bold">Lista de Períodos</h3>  
+                <p class="mt-2">Visualiza todos los períodos escolares.</p>  
+            </a>  
+            <a href="{{ url_for('list_subjects') }}" class="block p-6 bg-blue-500 text-white rounded-lg shadow-lg hover:bg-blue-600 transition transform hover:scale-105">  
+                <span class="material-icons mb-2">book</span>  
+                <h3 class="text-xl font-bold">Lista de Materias</h3>  
+                <p class="mt-2">Visualiza todas las materias registradas.</p>  
+            </a>  
+            <a href="{{ url_for('list_sections') }}" class="block p-6 bg-blue-500 text-white rounded-lg shadow-lg hover:bg-blue-600 transition transform hover:scale-105">  
+                <span class="material-icons mb-2">class</span>  
+                <h3 class="text-xl font-bold">Lista de Secciones</h3>  
+                <p class="mt-2">Visualiza todas las secciones disponibles.</p>  
+            </a>  
+            <a href="{{ url_for('list_grades') }}" class="block p-6 bg-blue-500 text-white rounded-lg shadow-lg hover:bg-blue-600 transition transform hover:scale-105">  
+                <span class="material-icons mb-2">grade</span>  
+                <h3 class="text-xl font-bold">Lista de Calificaciones</h3>  
+                <p class="mt-2">Visualiza todas las calificaciones registradas.</p>  
+            </a>  
+        </div>  
+    </main>  
+</body>  
+</html>
