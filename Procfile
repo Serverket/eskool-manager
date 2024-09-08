@@ -1,1 +1,1 @@
-web: gunicorn -w 4 eskool-manager:app
+web: gunicorn -w 4 "eskool-manager.app:app"
