@@ -1,4 +1,4 @@
-# School Manager &middot; [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![Version](https://img.shields.io/badge/version-1.0-blue.svg)](https://semver.org)  
+# Eskool Manager &middot; [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![Version](https://img.shields.io/badge/version-1.0-blue.svg)](https://semver.org)  
 
 A Flask-based web application for managing students, teachers, periods, subjects, and grading in an educational environment.  
 

@@ -16,6 +16,7 @@ def index():
 
 @app.route('/register_student', methods=['GET', 'POST'])  
 def register_student():  
+    sections = Section.query.all()  # Cargar todas las secciones  
     if request.method == 'POST':  
         first_name = request.form['first_name']  
         last_name = request.form['last_name']  
@@ -28,7 +29,7 @@ def register_student():
             return redirect(url_for('list_students'))  
         else:  
             flash('Por favor completa todos los campos obligatorios.', 'danger')  
-    return render_template('register_student.html')  
+    return render_template('register_student.html', sections=sections)  # Pasar secciones a la plantilla 
 
 @app.route('/students')  
 def list_students():  
